@@ -31,9 +31,10 @@ const render = () => {
                 </ul>
             </div>
             <div className="control-area">
-                <form onSubmit={onFormSubmission}>
+                <form onSubmit={onFormSubmission} className= "control-form">
                     <input type="text" name="intext"></input>
-                        <button>↑</button>
+                    <div></div>
+                    <button>↑</button>
                     </form>
                 </div>
             </div>

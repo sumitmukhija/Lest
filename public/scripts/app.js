@@ -42,8 +42,9 @@ var render = function render() {
             { className: "control-area" },
             React.createElement(
                 "form",
-                { onSubmit: onFormSubmission },
+                { onSubmit: onFormSubmission, className: "control-form" },
                 React.createElement("input", { type: "text", name: "intext" }),
+                React.createElement("div", null),
                 React.createElement(
                     "button",
                     null,
