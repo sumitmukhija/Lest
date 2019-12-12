@@ -1,6 +1,6 @@
 "use strict";
 
-var rootElement = document.querySelector('.container');
+var rootElement = document.querySelector('.notepad-wrapper');
 
 var list = [];
 
@@ -37,19 +37,16 @@ var render = function render() {
                 getList()
             )
         ),
+        React.createElement("div", null),
         React.createElement(
-            "div",
-            { className: "control-area" },
+            "form",
+            { onSubmit: onFormSubmission, className: "control-form" },
+            React.createElement("input", { type: "text", name: "intext" }),
+            React.createElement("div", null),
             React.createElement(
-                "form",
-                { onSubmit: onFormSubmission, className: "control-form" },
-                React.createElement("input", { type: "text", name: "intext" }),
-                React.createElement("div", null),
-                React.createElement(
-                    "button",
-                    null,
-                    "\u2191"
-                )
+                "button",
+                null,
+                "\u2191"
             )
         )
     );

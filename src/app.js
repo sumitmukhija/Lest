@@ -1,4 +1,4 @@
-const rootElement = document.querySelector('.container');
+const rootElement = document.querySelector('.notepad-wrapper');
 
 
 
@@ -23,21 +23,19 @@ const onFormSubmission = (e) => {
 
 const render = () => {
     const listComponent = (
-
         <div className="notepad card">
             <div className="list-area">
                 <ul>
                     {getList()}
                 </ul>
             </div>
-            <div className="control-area">
+            <div></div>
                 <form onSubmit={onFormSubmission} className= "control-form">
                     <input type="text" name="intext"></input>
                     <div></div>
                     <button>↑</button>
                     </form>
-                </div>
-            </div>
+        </div>
     );
     
     ReactDOM.render(listComponent, rootElement);    

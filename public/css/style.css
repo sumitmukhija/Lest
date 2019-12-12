@@ -1,26 +1,22 @@
 body{
-    margin: 0 auto;
+    margin: auto;
+    background: #CFD8DC;
 }
 
 .container{
-    width: 100Vw;
+    display: grid;
     height: 100vh;
-    background: #CFD8DC;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-around;
+    grid-template-rows: 20% 60% 20%;
+    grid-template-columns: 35% 30% 35%;
 }
 
 .notepad{
-    min-width: 35vw;
-    min-height: 80vh;
     background: #FFF;
     padding: 1em;
-    display: flex;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 90% 3% 6%;
+    grid-template-columns: 100%;
+    height: 100%;
 }
 
 .card{
@@ -31,29 +27,21 @@ body{
 }
 
 .list-area{
-    width: 100%;
-    flex-basis: 77vh;
-}
-
-.control-area{
-    width: 100%;
-    flex-basis: 4vh;
 }
 
 .control-form{
-    height: 4vh;
-    display: grid !important; 
+    display: grid;
     grid-template-columns: 88% 2% 10%;
     grid-template-rows: 100%;
-}
-
-input:focus {
-  outline: none;
 }
 
 input[type=text]{
     border: 1px solid #AAA;
     border-radius: 1em;
+}
+
+input:focus {
+  outline: none;
 }
 
 button{
