@@ -4,13 +4,37 @@ var rootElement = document.querySelector('.notepad-wrapper');
 
 var list = [];
 
+var createTaskAndAddToTheList = function createTaskAndAddToTheList(item) {
+    var task = {
+        content: item,
+        createdAt: new Date(),
+        id: item.length + Math.random,
+        isChecked: false
+    };
+    list.push(task);
+};
+
+var ListItem = function ListItem(props) {
+    return React.createElement(
+        "div",
+        { className: "list-item" },
+        React.createElement("input", { type: "checkbox", id: "check", checked: props.isChecked }),
+        React.createElement(
+            "label",
+            { htmlFor: "check" },
+            props.content
+        ),
+        React.createElement(
+            "button",
+            { className: "small-btn" },
+            "\u232B"
+        )
+    );
+};
+
 var getList = function getList() {
-    return list.map(function (item) {
-        return React.createElement(
-            "li",
-            null,
-            item
-        );
+    return list.map(function (task) {
+        return React.createElement(ListItem, { content: task.content, key: task.id, createdAt: task.createdAt });
     });
 };
 
@@ -18,7 +42,7 @@ var onFormSubmission = function onFormSubmission(e) {
     e.preventDefault();
     var item = e.target.elements.intext.value;
     if (item) {
-        list.push(item);
+        createTaskAndAddToTheList(item);
         e.target.elements.intext.value = "";
     }
     render();
@@ -31,17 +55,13 @@ var render = function render() {
         React.createElement(
             "div",
             { className: "list-area" },
-            React.createElement(
-                "ul",
-                null,
-                getList()
-            )
+            getList()
         ),
         React.createElement("div", null),
         React.createElement(
             "form",
             { onSubmit: onFormSubmission, className: "control-form" },
-            React.createElement("input", { type: "text", name: "intext" }),
+            React.createElement("input", { type: "text", name: "intext", placeholder: "Make a list.." }),
             React.createElement("div", null),
             React.createElement(
                 "button",

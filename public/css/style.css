@@ -38,6 +38,11 @@ body{
 input[type=text]{
     border: 1px solid #AAA;
     border-radius: 1em;
+    padding-left: 1.2em;
+}
+
+input[type=checkbox]{
+    margin-top: 15px;
 }
 
 input:focus {
@@ -48,4 +53,22 @@ button{
     color:#FFF;
     background: #512DA8;
     border-radius: 15px;
+}
+
+.small-btn{
+    width: 24px;
+    height: 24px;
+    background: #FFF !important;
+    color: #512DA8;
+    border-radius: 12px;
+    margin-top: 6px;
+}
+
+.list-item{
+    min-height: 6vh;
+    line-height: 6vh;
+    border-bottom: 1px solid #EEE;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 8% 82% 10%;
 }
