@@ -6,7 +6,7 @@ var list = [];
 
 var createTaskAndAddToTheList = function createTaskAndAddToTheList(item) {
     var task = {
-        content: item,
+        content: item.trim(),
         createdAt: new Date(),
         id: item.length + Math.random,
         isChecked: false
@@ -57,11 +57,10 @@ var render = function render() {
             { className: "list-area" },
             getList()
         ),
-        React.createElement("div", null),
         React.createElement(
             "form",
             { onSubmit: onFormSubmission, className: "control-form" },
-            React.createElement("input", { type: "text", autocomplete: "off", name: "intext", placeholder: "Make a list.." }),
+            React.createElement("input", { type: "text", autoComplete: "off", name: "intext", placeholder: "Make a list.." }),
             React.createElement("div", null),
             React.createElement(
                 "button",

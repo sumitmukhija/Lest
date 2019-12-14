@@ -10,11 +10,12 @@ body{
     grid-template-columns: 35% 30% 35%;
 }
 
+
 .notepad{
     background: #FFF;
     padding: 1em;
     display: grid;
-    grid-template-rows: 90% 3% 6%;
+    grid-template-rows: 84% 15%;
     grid-template-columns: 100%;
     height: 100%;
 }
@@ -27,18 +28,22 @@ body{
 }
 
 .list-area{
+
 }
 
 .control-form{
     display: grid;
     grid-template-columns: 88% 2% 10%;
     grid-template-rows: 100%;
+    overflow: hidden;
 }
 
 input[type=text]{
     border: 1px solid #AAA;
     border-radius: 1em;
     padding-left: 1.2em;
+    height: 60%;
+    margin-top: 2%;
 }
 
 input[type=checkbox]{
@@ -53,6 +58,8 @@ button{
     color:#FFF;
     background: #512DA8;
     border-radius: 15px;
+    height: 60%;
+    margin-top: 6px;
 }
 
 .small-btn{
@@ -71,4 +78,15 @@ button{
     display: grid;
     grid-template-rows: 100%;
     grid-template-columns: 8% 82% 10%;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .container{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 11% 68% 11%;
+    grid-template-columns: 20% 60% 20%;
+    }
+
 }

@@ -5,7 +5,7 @@ let list = [];
 
 let createTaskAndAddToTheList = (item) => {
     let task = {
-        content: item,
+        content: item.trim(),
         createdAt: new Date(),
         id: (item.length + Math.random),
         isChecked: false
@@ -45,12 +45,11 @@ const render = () => {
             <div className="list-area">
                     {getList()}
             </div>
-            <div></div>
-                <form onSubmit={onFormSubmission} className= "control-form">
-                <input type="text" autocomplete="off" name="intext" placeholder = "Make a list.."></input>
+            <form onSubmit={onFormSubmission} className= "control-form">
+                <input type="text" autoComplete="off" name="intext" placeholder = "Make a list.."></input>
                     <div></div>
                     <button>↑</button>
-                    </form>
+            </form>
         </div>
     );
     
