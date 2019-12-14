@@ -61,7 +61,7 @@ var render = function render() {
         React.createElement(
             "form",
             { onSubmit: onFormSubmission, className: "control-form" },
-            React.createElement("input", { type: "text", name: "intext", placeholder: "Make a list.." }),
+            React.createElement("input", { type: "text", autocomplete: "off", name: "intext", placeholder: "Make a list.." }),
             React.createElement("div", null),
             React.createElement(
                 "button",

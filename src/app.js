@@ -47,7 +47,7 @@ const render = () => {
             </div>
             <div></div>
                 <form onSubmit={onFormSubmission} className= "control-form">
-                    <input type="text" name="intext" placeholder = "Make a list.."></input>
+                <input type="text" autocomplete="off" name="intext" placeholder = "Make a list.."></input>
                     <div></div>
                     <button>↑</button>
                     </form>
