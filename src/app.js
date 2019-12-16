@@ -46,8 +46,8 @@ const render = () => {
                     {getList()}
             </div>
             <form onSubmit={onFormSubmission} className= "control-form">
-                <input type="text" autoComplete="off" name="intext" placeholder = "Make a list.."></input>
-                    <div></div>
+                <input type="text" autoComplete="off" name="intext" placeholder="Make a list.."></input>
+                <div className="sep">&nbsp;&nbsp;&nbsp;</div>
                     <button>↑</button>
             </form>
         </div>
