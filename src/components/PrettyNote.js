@@ -15,6 +15,10 @@ export default class PrettyNote extends React.Component{
         }
     }
 
+    deleteATask(item) {
+        console.log(item);
+    }
+
     createTaskAndAddToTheList(item){
         let creationDate = new Date();
         let task = {
