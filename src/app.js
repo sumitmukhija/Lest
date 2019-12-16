@@ -1,26 +1,21 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ListItem from "./components/ListItem"
+
 const rootElement = document.querySelector('.notepad-wrapper');
 
 
 let list = [];
 
 let createTaskAndAddToTheList = (item) => {
+    let creationDate = new Date();
     let task = {
         content: item.trim(),
-        createdAt: new Date(),
-        id: (item.length + Math.random),
+        createdAt: creationDate,
+        id: creationDate,
         isChecked: false
     }
     list.push(task);
-}
-
-let ListItem = (props) => {
-    return (
-        <div className = "list-item">
-            <input type="checkbox" id="check" checked={props.isChecked}></input>
-            <label htmlFor="check">{props.content}</label>
-            <button className='small-btn'>⌫</button>
-        </div>
-    );
 }
 
 const getList = () => {
