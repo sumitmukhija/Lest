@@ -29,11 +29,23 @@ export default class PrettyNote extends React.Component{
         }
         let list = this.state.list;
         list.push(task);
+        localStorage.setItem("list", JSON.stringify(list));
         this.setState(() => {
             return {
                 list: list
             }
         });
+    }
+
+    componentWillMount() {
+        let list = JSON.parse(localStorage.getItem("list"));
+        if (list) {
+            this.setState(() => {
+                return {
+                    list
+                }
+            });
+        }
     }
 
     onFormSubmission(e){

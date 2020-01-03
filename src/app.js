@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PrettyNote from "./components/PrettyNote"
+import Container from "./components/Container"
 
-const rootElement = document.querySelector('.notepad-wrapper');
-ReactDOM.render(<PrettyNote />, rootElement);    
+const rootElement = document.querySelector('.root');
+ReactDOM.render(<Container />, rootElement);    
 
