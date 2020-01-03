@@ -19,11 +19,9 @@ export default class PrettyNote extends React.Component{
 
     deleteATask(e) {
         let targetId = e.target.id;
-        console.log(this.state.list);
         let list = this.state.list.filter((e) => {
             return e.id !== targetId;
         });
-        console.log(list);
         localStorage.setItem("list", JSON.stringify(list));
         this.setState(() => {
             return {
