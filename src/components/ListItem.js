@@ -6,7 +6,7 @@ let ListItem = (props) => {
         <div className = "list-item">
             <input type="checkbox" id="check" checked={props.isChecked}></input>
             <label htmlFor="check">{props.content}</label>
-            <button className='small-btn'>⌫</button>
+            <button id={props.id} className='small-btn' onClick = {props.deleteATask}>⌫</button>
         </div>
     );
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import ListItem from "./ListItem"
 import ControlForm from "./ControlForm"
 import ListArea from "./ListArea"
+import uuid from "uuid";
 
 export default class PrettyNote extends React.Component{
 
@@ -10,13 +11,25 @@ export default class PrettyNote extends React.Component{
         this.createTaskAndAddToTheList = this.createTaskAndAddToTheList.bind(this);
         this.onFormSubmission = this.onFormSubmission.bind(this);
         this.getList = this.getList.bind(this);
+        this.deleteATask = this.deleteATask.bind(this);
         this.state = {
             list: []
         }
     }
 
-    deleteATask(item) {
-        console.log(item);
+    deleteATask(e) {
+        let targetId = e.target.id;
+        console.log(this.state.list);
+        let list = this.state.list.filter((e) => {
+            return e.id !== targetId;
+        });
+        console.log(list);
+        localStorage.setItem("list", JSON.stringify(list));
+        this.setState(() => {
+            return {
+                list
+            }
+        });
     }
 
     createTaskAndAddToTheList(item){
@@ -24,7 +37,7 @@ export default class PrettyNote extends React.Component{
         let task = {
             content: item.trim(),
             createdAt: creationDate,
-            id: creationDate,
+            id: uuid(),
             isChecked: false
         }
         let list = this.state.list;
@@ -59,7 +72,7 @@ export default class PrettyNote extends React.Component{
 
     getList(){
         return this.state.list.map((task) => { 
-            return <ListItem content={task.content} key={task.id} createdAt={task.createdAt}/>
+            return <ListItem content={task.content} id={task.id} key={task.id} createdAt={task.createdAt} deleteATask={this.deleteATask}/>
         });
     }
 
